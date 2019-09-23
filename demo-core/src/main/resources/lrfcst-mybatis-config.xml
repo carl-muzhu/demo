@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <properties>
+        <property name="dialect" value="mysql"/>
+    </properties>
+
+    <!--数据库下划线自动映射DO驼峰字段-->
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!--如果想要输出结果集，打开此注释-->
+        <!--<setting name="logImpl" value="LOG4J"/>-->
+    </settings>
+
+    <!-- 设置别名 -->
+    <typeAliases>
+
+    </typeAliases>
+
+    <typeHandlers>
+    </typeHandlers>
+
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
+    </plugins>
+</configuration>
