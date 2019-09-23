@@ -1,0 +1,2 @@
+2019-09-23 09:52:57.058  INFO 28506 --- [Thread-3] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-23 09:52:57.100  INFO 28506 --- [Thread-3] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'scheduledExecutorService'

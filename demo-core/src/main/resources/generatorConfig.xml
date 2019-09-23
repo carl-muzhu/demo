@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <properties resource="conf/conf.properties"/>
+
+    <!-- 数据库驱动包位置 -->
+    <classPathEntry location="${mysql.connector}" />
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <!-- TKmybatis配置 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+        </plugin>
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="${jdbc.driver.type}"
+                        connectionURL="${jdbc.url}"
+                        userId="${jdbc.username}"
+                        password="${jdbc.password}" />
+        <!-- 生成do包名和位置 -->
+        <javaModelGenerator targetPackage="org.muzhu.dal.object"
+                            targetProject="src/main/java" />
+
+        <!-- 生成mapper文件包名和位置 -->
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="src/main/resources" />
+
+        <!-- 生成dao的包名和位置 -->
+        <javaClientGenerator targetPackage="org.muzhu.dal.dal"
+                             targetProject="src/main/java" type="XMLMAPPER" />
+
+
+        <!-- 要生成的那些表 -->
+        <table tableName="demo_propagation" domainObjectName="DemoPropagation">
+            <generatedKey column="id" sqlStatement="JDBC"/>
+        </table>
+    </context>
+</generatorConfiguration>
