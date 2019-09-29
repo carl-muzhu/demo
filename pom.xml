@@ -18,6 +18,8 @@
     <modules>
         <module>demo-api</module>
         <module>demo-core</module>
+        <module>线上问题排查</module>
+        <module>虚拟机实践</module>
     </modules>
 
     <properties>
